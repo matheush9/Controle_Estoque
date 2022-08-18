@@ -22,15 +22,17 @@ object DmProdutos: TDmProdutos
     object tb_produtosVALIDADE: TDateField
       FieldName = 'VALIDADE'
       Origin = 'VALIDADE'
+      EditMask = '##/##/####;1;_'
     end
     object tb_produtosESTOQUE_ATUAL: TIntegerField
       FieldName = 'ESTOQUE_ATUAL'
       Origin = 'ESTOQUE_ATUAL'
+      ReadOnly = True
     end
     object tb_produtosPRODUTO_ID: TIntegerField
       FieldName = 'PRODUTO_ID'
       Origin = 'PRODUTO_ID'
-      Required = True
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
   end
 end

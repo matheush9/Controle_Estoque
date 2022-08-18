@@ -12,6 +12,11 @@ type
   TDmMovimentacao = class(TDataModule)
     tb_movimentacao: TFDTable;
     qry_movimentacao: TFDQuery;
+    tb_movimentacaoTIPO: TIntegerField;
+    tb_movimentacaoDATA_HORA: TIntegerField;
+    tb_movimentacaoOBSERVACAO: TMemoField;
+    tb_movimentacaoRESPONSAVEL: TIntegerField;
+    tb_movimentacaoMOVIMENTACAO_ID: TIntegerField;
   private
     { Private declarations }
   public

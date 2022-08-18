@@ -52,7 +52,6 @@ begin
     DmProdutos := TDmProdutos.Create(DmProdutos);
   end;
 
-  dbEdit_data.Field.EditMask := '00/00/0000';
 end;
 
 end.

@@ -112,6 +112,7 @@ object frmCadProduto: TfrmCadProduto
     AutoSize = False
     DataField = 'VALIDADE'
     DataSource = ds_produto
+    MaxLength = 10
     TabOrder = 2
   end
   object DBEdit4: TDBEdit
@@ -127,7 +128,7 @@ object frmCadProduto: TfrmCadProduto
   object DBGrid1: TDBGrid
     Left = 355
     Top = 125
-    Width = 283
+    Width = 281
     Height = 308
     DataSource = ds_produto
     TabOrder = 4
