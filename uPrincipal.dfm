@@ -20,7 +20,6 @@ object frmPrincipal: TfrmPrincipal
     Width = 651
     Height = 500
     Align = alClient
-    Caption = 'Panel1'
     TabOrder = 0
     ExplicitLeft = 400
     ExplicitTop = 96
@@ -34,21 +33,25 @@ object frmPrincipal: TfrmPrincipal
       Caption = 'Sistema'
       object Sair1: TMenuItem
         Caption = 'Sair'
+        OnClick = Sair1Click
       end
     end
     object Sistema2: TMenuItem
       Caption = 'Cadastro'
       object Produtos1: TMenuItem
         Caption = 'Produtos'
+        OnClick = Produtos1Click
       end
     end
     object Movimentao1: TMenuItem
       Caption = 'Movimenta'#231#227'o'
-      object Cadastrarmovimentao1: TMenuItem
+      object Cadastrarmov1: TMenuItem
         Caption = 'Cadastrar movimenta'#231#227'o'
+        OnClick = Cadastrarmov1Click
       end
-      object Consultarmovimentao1: TMenuItem
+      object Consultarmov1: TMenuItem
         Caption = 'Consultar movimenta'#231#227'o'
+        OnClick = Consultarmov1Click
       end
     end
   end

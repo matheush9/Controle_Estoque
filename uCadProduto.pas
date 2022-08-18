@@ -9,6 +9,7 @@ uses
 type
   TfrmCadProduto = class(TForm)
     ds_produto: TDataSource;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -21,5 +22,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmCadProduto.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  FreeAndNil(frmCadProduto)
+end;
 
 end.

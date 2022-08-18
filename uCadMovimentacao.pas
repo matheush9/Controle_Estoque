@@ -9,6 +9,7 @@ uses
 type
   TfrmCadMovimentacao = class(TForm)
     ds_movimentacao: TDataSource;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -21,5 +22,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmCadMovimentacao.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  FreeAndNil(frmCadMovimentacao);
+end;
 
 end.

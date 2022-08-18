@@ -9,14 +9,18 @@ uses
 type
   TfrmPrincipal = class(TForm)
     MainMenu1: TMainMenu;
-    Panel1: TPanel;
     Sistema1: TMenuItem;
     Sistema2: TMenuItem;
     Movimentao1: TMenuItem;
-    Cadastrarmovimentao1: TMenuItem;
-    Consultarmovimentao1: TMenuItem;
+    Cadastrarmov1: TMenuItem;
+    Consultarmov1: TMenuItem;
     Produtos1: TMenuItem;
     Sair1: TMenuItem;
+    Panel1: TPanel;
+    procedure Sair1Click(Sender: TObject);
+    procedure Produtos1Click(Sender: TObject);
+    procedure Cadastrarmov1Click(Sender: TObject);
+    procedure Consultarmov1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,5 +33,39 @@ var
 implementation
 
 {$R *.dfm}
+
+uses uCadMovimentacao, uCadProduto, uConsMovimentacao;
+
+procedure TfrmPrincipal.Cadastrarmov1Click(Sender: TObject);
+begin
+  if frmCadMovimentacao = nil then
+  begin
+    frmCadMovimentacao := TfrmCadMovimentacao.Create(Self);
+    frmCadMovimentacao.Create(Self);
+  end;
+end;
+
+procedure TfrmPrincipal.Consultarmov1Click(Sender: TObject);
+begin
+  if frmConsMovimentacao = nil then
+  begin
+    frmConsMovimentacao := TfrmConsMovimentacao.Create(Self);
+    frmConsMovimentacao.Create(Self);
+  end;
+end;
+
+procedure TfrmPrincipal.Produtos1Click(Sender: TObject);
+begin
+  if frmCadProduto = nil then
+  begin
+    frmCadProduto := TfrmCadProduto.Create(Self);
+    frmCadProduto.Show;
+  end;
+end;
+
+procedure TfrmPrincipal.Sair1Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
 
 end.

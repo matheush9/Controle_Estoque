@@ -12,6 +12,7 @@ uses
 type
   TfrmConsMovimentacao = class(TForm)
     ds_consmov: TDataSource;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -26,5 +27,12 @@ implementation
 {$R *.dfm}
 
 uses uDmMovimentacao;
+
+procedure TfrmConsMovimentacao.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  FreeAndNil(frmConsMovimentacao);
+
+end;
 
 end.
