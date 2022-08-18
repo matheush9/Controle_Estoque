@@ -17,12 +17,5 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
-  Application.CreateForm(TfrmCadProduto, frmCadProduto);
-  Application.CreateForm(TfrmCadMovimentacao, frmCadMovimentacao);
-  Application.CreateForm(TfrmConsMovimentacao, frmConsMovimentacao);
-  Application.CreateForm(TDmPrincipal, DmPrincipal);
-  Application.CreateForm(TDmProdutos, DmProdutos);
-  Application.CreateForm(TDmMovimentacao, DmMovimentacao);
-  Application.CreateForm(TDmMovProd, DmMovProd);
   Application.Run;
 end.
