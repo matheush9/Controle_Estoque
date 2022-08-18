@@ -4,11 +4,23 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Mask;
 
 type
   TfrmCadProduto = class(TForm)
     ds_produto: TDataSource;
+    Label1: TLabel;
+    Label2: TLabel;
+    DBEdit1: TDBEdit;
+    Label3: TLabel;
+    DBEdit2: TDBEdit;
+    Label4: TLabel;
+    dbEdit_data: TDBEdit;
+    Label5: TLabel;
+    DBEdit4: TDBEdit;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
   private
@@ -28,7 +40,9 @@ uses uDmProdutos;
 
 procedure TfrmCadProduto.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FreeAndNil(frmCadProduto)
+  FreeAndNil(DmProdutos);
+  frmCadProduto := nil;
+  Action := CaFree;
 end;
 
 procedure TfrmCadProduto.FormCreate(Sender: TObject);
@@ -37,6 +51,8 @@ begin
   begin
     DmProdutos := TDmProdutos.Create(DmProdutos);
   end;
+
+  dbEdit_data.Field.EditMask := '00/00/0000';
 end;
 
 end.

@@ -41,7 +41,7 @@ begin
   if frmCadMovimentacao = nil then
   begin
     frmCadMovimentacao := TfrmCadMovimentacao.Create(frmCadMovimentacao);
-    frmCadMovimentacao.Show;
+    frmCadMovimentacao.ShowModal;
   end;
 end;
 
@@ -50,7 +50,7 @@ begin
   if frmConsMovimentacao = nil then
   begin
     frmConsMovimentacao := TfrmConsMovimentacao.Create(frmConsMovimentacao);
-    frmConsMovimentacao.Show;
+    frmConsMovimentacao.ShowModal;
   end;
 end;
 
@@ -59,7 +59,7 @@ begin
   if frmCadProduto = nil then
   begin
     frmCadProduto := TfrmCadProduto.Create(frmCadProduto);
-    frmCadProduto.Show;
+    frmCadProduto.ShowModal;
   end;
 end;
 

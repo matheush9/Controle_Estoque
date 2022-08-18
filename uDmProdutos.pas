@@ -11,6 +11,11 @@ uses
 type
   TDmProdutos = class(TDataModule)
     tb_produtos: TFDTable;
+    tb_produtosNOME: TStringField;
+    tb_produtosFABRICANTE: TStringField;
+    tb_produtosVALIDADE: TDateField;
+    tb_produtosESTOQUE_ATUAL: TIntegerField;
+    tb_produtosPRODUTO_ID: TIntegerField;
   private
     { Private declarations }
   public

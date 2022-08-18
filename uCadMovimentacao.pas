@@ -30,7 +30,8 @@ procedure TfrmCadMovimentacao.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
   FreeAndNil(DmMovimentacao);
-  FreeAndNil(frmCadMovimentacao);
+  frmCadMovimentacao := nil;
+  Action := CaFree;
 end;
 
 procedure TfrmCadMovimentacao.FormCreate(Sender: TObject);

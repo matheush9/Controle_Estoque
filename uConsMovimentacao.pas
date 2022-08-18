@@ -32,7 +32,9 @@ uses uDmMovimentacao;
 procedure TfrmConsMovimentacao.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
-  FreeAndNil(frmConsMovimentacao);
+  FreeAndNil(DmMovimentacao);
+  frmConsMovimentacao := nil;
+  Action := CaFree;
 end;
 
 procedure TfrmConsMovimentacao.FormCreate(Sender: TObject);
