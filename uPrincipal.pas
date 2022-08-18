@@ -40,8 +40,8 @@ procedure TfrmPrincipal.Cadastrarmov1Click(Sender: TObject);
 begin
   if frmCadMovimentacao = nil then
   begin
-    frmCadMovimentacao := TfrmCadMovimentacao.Create(Self);
-    frmCadMovimentacao.Create(Self);
+    frmCadMovimentacao := TfrmCadMovimentacao.Create(frmCadMovimentacao);
+    frmCadMovimentacao.Show;
   end;
 end;
 
@@ -49,8 +49,8 @@ procedure TfrmPrincipal.Consultarmov1Click(Sender: TObject);
 begin
   if frmConsMovimentacao = nil then
   begin
-    frmConsMovimentacao := TfrmConsMovimentacao.Create(Self);
-    frmConsMovimentacao.Create(Self);
+    frmConsMovimentacao := TfrmConsMovimentacao.Create(frmConsMovimentacao);
+    frmConsMovimentacao.Show;
   end;
 end;
 
@@ -58,7 +58,7 @@ procedure TfrmPrincipal.Produtos1Click(Sender: TObject);
 begin
   if frmCadProduto = nil then
   begin
-    frmCadProduto := TfrmCadProduto.Create(Self);
+    frmCadProduto := TfrmCadProduto.Create(frmCadProduto);
     frmCadProduto.Show;
   end;
 end;

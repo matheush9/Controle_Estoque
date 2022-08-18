@@ -12,10 +12,11 @@ object frmCadProduto: TfrmCadProduto
   Font.Style = []
   OldCreateOrder = False
   OnClose = FormClose
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object ds_produto: TDataSource
-    Left = 328
-    Top = 144
+    Left = 312
+    Top = 168
   end
 end

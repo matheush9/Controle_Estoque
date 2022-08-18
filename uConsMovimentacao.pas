@@ -13,6 +13,7 @@ type
   TfrmConsMovimentacao = class(TForm)
     ds_consmov: TDataSource;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,7 +33,14 @@ procedure TfrmConsMovimentacao.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
   FreeAndNil(frmConsMovimentacao);
+end;
 
+procedure TfrmConsMovimentacao.FormCreate(Sender: TObject);
+begin
+  if DmMovimentacao = nil then
+  begin
+    DmMovimentacao := TDmMovimentacao.Create(DmMovimentacao);
+  end;
 end;
 
 end.

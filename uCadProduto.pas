@@ -10,6 +10,7 @@ type
   TfrmCadProduto = class(TForm)
     ds_produto: TDataSource;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -23,9 +24,19 @@ implementation
 
 {$R *.dfm}
 
+uses uDmProdutos;
+
 procedure TfrmCadProduto.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   FreeAndNil(frmCadProduto)
+end;
+
+procedure TfrmCadProduto.FormCreate(Sender: TObject);
+begin
+  if DmProdutos = nil then
+  begin
+    DmProdutos := TDmProdutos.Create(DmProdutos);
+  end;
 end;
 
 end.

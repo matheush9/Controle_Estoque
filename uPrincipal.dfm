@@ -21,10 +21,6 @@ object frmPrincipal: TfrmPrincipal
     Height = 500
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 400
-    ExplicitTop = 96
-    ExplicitWidth = 185
-    ExplicitHeight = 41
   end
   object MainMenu1: TMainMenu
     Left = 456
