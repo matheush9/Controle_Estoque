@@ -132,6 +132,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     Width = 476
     Height = 406
     Align = alRight
+    BevelInner = bvRaised
     TabOrder = 5
     object Label6: TLabel
       Left = 24
@@ -196,9 +197,9 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     end
     object DBGrid2: TDBGrid
       Left = 24
-      Top = 151
+      Top = 144
       Width = 433
-      Height = 186
+      Height = 193
       DataSource = DmMovProd.ds_movprod
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
@@ -220,6 +221,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
         item
           Expanded = False
           FieldName = 'PRODUTO_ID'
+          Title.Caption = 'PRODUTO'
           Visible = True
         end
         item
@@ -256,7 +258,9 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     Width = 1084
     Height = 65
     Align = alTop
+    BevelInner = bvSpace
     TabOrder = 6
+    ExplicitTop = -6
     object Label1: TLabel
       Left = 17
       Top = 19
