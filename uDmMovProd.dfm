@@ -4,7 +4,9 @@ object DmMovProd: TDmMovProd
   Width = 315
   object tb_movprod: TFDTable
     Active = True
-    IndexFieldNames = 'MV_PR_ID'
+    IndexName = 'FK_MOVIMENTACAO_PRODUTOS_1'
+    MasterSource = DmMovimentacao.ds_movimentacao
+    MasterFields = 'MOVIMENTACAO_ID'
     Connection = DmPrincipal.FDConnection1
     TableName = 'MOVIMENTACAO_PRODUTOS'
     Left = 96
@@ -12,6 +14,7 @@ object DmMovProd: TDmMovProd
     object tb_movprodMV_PR_ID: TIntegerField
       FieldName = 'MV_PR_ID'
       Origin = 'MV_PR_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
     object tb_movprodMOVIMENTACAO_ID: TIntegerField
       FieldName = 'MOVIMENTACAO_ID'
@@ -47,5 +50,10 @@ object DmMovProd: TDmMovProd
       end>
     Left = 96
     Top = 160
+  end
+  object ds_movprod: TDataSource
+    DataSet = tb_movprod
+    Left = 200
+    Top = 32
   end
 end

@@ -17,6 +17,7 @@ type
     tb_movimentacaoOBSERVACAO: TMemoField;
     tb_movimentacaoRESPONSAVEL: TStringField;
     tb_movimentacaoMOVIMENTACAO_ID: TIntegerField;
+    ds_movimentacao: TDataSource;
   private
     { Private declarations }
   public

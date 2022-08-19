@@ -2,8 +2,8 @@ object frmConsMovimentacao: TfrmConsMovimentacao
   Left = 0
   Top = 0
   Caption = 'Consulta Movimenta'#231#227'o'
-  ClientHeight = 367
-  ClientWidth = 473
+  ClientHeight = 388
+  ClientWidth = 497
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,8 +15,4 @@ object frmConsMovimentacao: TfrmConsMovimentacao
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object ds_consmov: TDataSource
-    Left = 304
-    Top = 120
-  end
 end

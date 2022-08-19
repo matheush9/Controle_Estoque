@@ -77,17 +77,17 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     Height = 25
     AutoSize = False
     DataField = 'DATA_HORA'
-    DataSource = ds_movimentacao
+    DataSource = DmMovimentacao.ds_movimentacao
     ReadOnly = True
     TabOrder = 0
   end
   object DBMemo1: TDBMemo
     Left = 19
-    Top = 250
+    Top = 251
     Width = 246
     Height = 112
     DataField = 'OBSERVACAO'
-    DataSource = ds_movimentacao
+    DataSource = DmMovimentacao.ds_movimentacao
     TabOrder = 1
   end
   object DBEdit3: TDBEdit
@@ -97,7 +97,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     Height = 25
     AutoSize = False
     DataField = 'RESPONSAVEL'
-    DataSource = ds_movimentacao
+    DataSource = DmMovimentacao.ds_movimentacao
     TabOrder = 2
   end
   object DBGrid1: TDBGrid
@@ -105,7 +105,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     Top = 123
     Width = 286
     Height = 302
-    DataSource = ds_movimentacao
+    DataSource = DmMovimentacao.ds_movimentacao
     TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -120,7 +120,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     Height = 21
     Style = csDropDownList
     DataField = 'TIPO'
-    DataSource = ds_movimentacao
+    DataSource = DmMovimentacao.ds_movimentacao
     Items.Strings = (
       'Entrada no Estoque'
       'Saida do Estoque')
@@ -190,7 +190,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
       Top = 26
       Width = 185
       Height = 29
-      DataSource = ds_movprod
+      DataSource = DmMovProd.ds_movprod
       VisibleButtons = [nbInsert, nbDelete, nbPost, nbCancel, nbRefresh]
       TabOrder = 0
     end
@@ -199,7 +199,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
       Top = 151
       Width = 433
       Height = 186
-      DataSource = ds_movprod
+      DataSource = DmMovProd.ds_movprod
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -234,7 +234,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
       Width = 129
       Height = 21
       DataField = 'QUANTIDADE'
-      DataSource = ds_movprod
+      DataSource = DmMovProd.ds_movprod
       TabOrder = 2
     end
     object DBLookupComboBox1: TDBLookupComboBox
@@ -243,10 +243,10 @@ object frmCadMovimentacao: TfrmCadMovimentacao
       Width = 145
       Height = 21
       DataField = 'PRODUTO_ID'
-      DataSource = ds_movprod
+      DataSource = DmMovProd.ds_movprod
       KeyField = 'PRODUTO_ID'
       ListField = 'NOME'
-      ListSource = ds_produtos
+      ListSource = DmProdutos.ds_produtos
       TabOrder = 3
     end
   end
@@ -275,25 +275,10 @@ object frmCadMovimentacao: TfrmCadMovimentacao
       Top = 17
       Width = 238
       Height = 31
-      DataSource = ds_movimentacao
+      DataSource = DmMovimentacao.ds_movimentacao
       VisibleButtons = [nbPrior, nbNext, nbInsert, nbDelete, nbPost, nbCancel, nbRefresh]
       TabOrder = 0
       OnClick = DBNavigator1Click
     end
-  end
-  object ds_movimentacao: TDataSource
-    DataSet = DmMovimentacao.tb_movimentacao
-    Left = 448
-    Top = 72
-  end
-  object ds_movprod: TDataSource
-    DataSet = DmMovProd.tb_movprod
-    Left = 832
-    Top = 409
-  end
-  object ds_produtos: TDataSource
-    DataSet = DmProdutos.tb_produtos
-    Left = 920
-    Top = 409
   end
 end

@@ -9,7 +9,6 @@ uses
 
 type
   TfrmCadProduto = class(TForm)
-    ds_produto: TDataSource;
     Label1: TLabel;
     Label2: TLabel;
     DBEdit1: TDBEdit;

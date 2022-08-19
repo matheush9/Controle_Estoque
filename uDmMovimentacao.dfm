@@ -44,4 +44,9 @@ object DmMovimentacao: TDmMovimentacao
     Left = 200
     Top = 64
   end
+  object ds_movimentacao: TDataSource
+    DataSet = tb_movimentacao
+    Left = 96
+    Top = 144
+  end
 end

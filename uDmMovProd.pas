@@ -17,6 +17,7 @@ type
     tb_movprodMOVIMENTACAO_ID: TIntegerField;
     tb_movprodPRODUTO_ID: TIntegerField;
     tb_movprodQUANTIDADE: TIntegerField;
+    ds_movprod: TDataSource;
   private
     { Private declarations }
   public

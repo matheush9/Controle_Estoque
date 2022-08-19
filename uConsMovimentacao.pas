@@ -7,11 +7,11 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.ExtCtrls, Vcl.DBCtrls,
+  Vcl.Grids, Vcl.DBGrids;
 
 type
   TfrmConsMovimentacao = class(TForm)
-    ds_consmov: TDataSource;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
   private
@@ -27,7 +27,7 @@ implementation
 
 {$R *.dfm}
 
-uses uDmMovimentacao;
+uses uDmMovimentacao, uDmMovProd;
 
 procedure TfrmConsMovimentacao.FormClose(Sender: TObject;
   var Action: TCloseAction);

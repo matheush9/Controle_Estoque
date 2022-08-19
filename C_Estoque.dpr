@@ -18,5 +18,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TDmPrincipal, DmPrincipal);
+  Application.CreateForm(TDmMovProd, DmMovProd);
   Application.Run;
 end.

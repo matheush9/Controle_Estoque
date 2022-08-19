@@ -91,7 +91,7 @@ object frmCadProduto: TfrmCadProduto
     Height = 25
     AutoSize = False
     DataField = 'NOME'
-    DataSource = ds_produto
+    DataSource = DmProdutos.ds_produtos
     TabOrder = 0
   end
   object DBEdit2: TDBEdit
@@ -101,17 +101,17 @@ object frmCadProduto: TfrmCadProduto
     Height = 25
     AutoSize = False
     DataField = 'FABRICANTE'
-    DataSource = ds_produto
+    DataSource = DmProdutos.ds_produtos
     TabOrder = 1
   end
   object dbEdit_data: TDBEdit
     Left = 24
     Top = 296
-    Width = 134
+    Width = 132
     Height = 25
     AutoSize = False
     DataField = 'VALIDADE'
-    DataSource = ds_produto
+    DataSource = DmProdutos.ds_produtos
     MaxLength = 10
     TabOrder = 2
   end
@@ -122,7 +122,7 @@ object frmCadProduto: TfrmCadProduto
     Height = 25
     AutoSize = False
     DataField = 'ESTOQUE_ATUAL'
-    DataSource = ds_produto
+    DataSource = DmProdutos.ds_produtos
     TabOrder = 3
   end
   object DBGrid1: TDBGrid
@@ -130,7 +130,7 @@ object frmCadProduto: TfrmCadProduto
     Top = 125
     Width = 281
     Height = 308
-    DataSource = ds_produto
+    DataSource = DmProdutos.ds_produtos
     TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -143,13 +143,8 @@ object frmCadProduto: TfrmCadProduto
     Top = 40
     Width = 231
     Height = 30
-    DataSource = ds_produto
+    DataSource = DmProdutos.ds_produtos
     VisibleButtons = [nbPrior, nbNext, nbInsert, nbDelete, nbPost, nbCancel, nbRefresh]
     TabOrder = 5
-  end
-  object ds_produto: TDataSource
-    DataSet = DmProdutos.tb_produtos
-    Left = 488
-    Top = 80
   end
 end

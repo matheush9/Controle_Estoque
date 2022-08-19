@@ -8,7 +8,7 @@ object DmProdutos: TDmProdutos
     Connection = DmPrincipal.FDConnection1
     TableName = 'PRODUTOS'
     Left = 80
-    Top = 72
+    Top = 56
     object tb_produtosNOME: TStringField
       FieldName = 'NOME'
       Origin = 'NOME'
@@ -34,5 +34,10 @@ object DmProdutos: TDmProdutos
       Origin = 'PRODUTO_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
+  end
+  object ds_produtos: TDataSource
+    DataSet = tb_produtos
+    Left = 168
+    Top = 56
   end
 end

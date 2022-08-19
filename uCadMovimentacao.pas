@@ -9,7 +9,6 @@ uses
 
 type
   TfrmCadMovimentacao = class(TForm)
-    ds_movimentacao: TDataSource;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -30,8 +29,6 @@ type
     Label8: TLabel;
     DBEdit1: TDBEdit;
     Label9: TLabel;
-    ds_movprod: TDataSource;
-    ds_produtos: TDataSource;
     DBLookupComboBox1: TDBLookupComboBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -63,6 +60,8 @@ end;
 procedure TfrmCadMovimentacao.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
+  FreeAndNil(DmProdutos);
+  FreeAndNil(DmMovProd);
   FreeAndNil(DmMovimentacao);
   frmCadMovimentacao := nil;
   Action := CaFree;
@@ -73,6 +72,16 @@ begin
   if DmMovimentacao = nil then
   begin
     DmMovimentacao := TDmMovimentacao.Create(DmMovimentacao);
+  end;
+
+  if DmProdutos = nil then
+  begin
+    DmProdutos := TDmProdutos.Create(DmProdutos);
+  end;
+
+  if DmMovProd = nil then
+  begin
+    DmMovProd := TDmMovProd.Create(DmMovProd);
   end;
 end;
 

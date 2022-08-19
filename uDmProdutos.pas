@@ -16,6 +16,7 @@ type
     tb_produtosVALIDADE: TDateField;
     tb_produtosESTOQUE_ATUAL: TIntegerField;
     tb_produtosPRODUTO_ID: TIntegerField;
+    ds_produtos: TDataSource;
   private
     { Private declarations }
   public
