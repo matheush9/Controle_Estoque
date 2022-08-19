@@ -13,14 +13,26 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
-    DBEdit2: TDBEdit;
+    dbEdit_dataHora: TDBEdit;
     Label4: TLabel;
     DBMemo1: TDBMemo;
     Label5: TLabel;
     DBEdit3: TDBEdit;
     DBGrid1: TDBGrid;
+    DBC_tipo: TDBComboBox;
+    DBNavigator2: TDBNavigator;
+    DBGrid2: TDBGrid;
+    Panel1: TPanel;
+    Panel2: TPanel;
     DBNavigator1: TDBNavigator;
-    DBComboBox1: TDBComboBox;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    DBEdit1: TDBEdit;
+    Label9: TLabel;
+    ds_movprod: TDataSource;
+    ds_produtos: TDataSource;
+    DBLookupComboBox1: TDBLookupComboBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
@@ -37,12 +49,12 @@ implementation
 
 {$R *.dfm}
 
-uses uDmMovimentacao, uDmMovProd;
+uses uDmMovimentacao, uDmMovProd, uDmProdutos;
 
 procedure TfrmCadMovimentacao.DBNavigator1Click(Sender: TObject;
   Button: TNavigateBtn);
 begin
-  if Button = nbPost then
+  if Button = nbInsert then
   begin
     DmMovimentacao.tb_movimentacao.FieldByName('DATA_HORA').Value := Now;
   end;

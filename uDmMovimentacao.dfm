@@ -7,26 +7,33 @@ object DmMovimentacao: TDmMovimentacao
     IndexFieldNames = 'MOVIMENTACAO_ID'
     Connection = DmPrincipal.FDConnection1
     TableName = 'MOVIMENTACAO'
-    Left = 64
+    Left = 72
     Top = 64
-    object tb_movimentacaoTIPO: TIntegerField
+    object tb_movimentacaoTIPO: TStringField
+      DisplayWidth = 29
       FieldName = 'TIPO'
       Origin = 'TIPO'
+      Size = 30
     end
-    object tb_movimentacaoDATA_HORA: TIntegerField
+    object tb_movimentacaoDATA_HORA: TSQLTimeStampField
+      DisplayWidth = 34
       FieldName = 'DATA_HORA'
       Origin = 'DATA_HORA'
     end
     object tb_movimentacaoOBSERVACAO: TMemoField
+      DisplayWidth = 11
       FieldName = 'OBSERVACAO'
       Origin = 'OBSERVACAO'
       BlobType = ftMemo
     end
-    object tb_movimentacaoRESPONSAVEL: TIntegerField
+    object tb_movimentacaoRESPONSAVEL: TStringField
+      DisplayWidth = 30
       FieldName = 'RESPONSAVEL'
       Origin = 'RESPONSAVEL'
+      Size = 30
     end
     object tb_movimentacaoMOVIMENTACAO_ID: TIntegerField
+      DisplayWidth = 16
       FieldName = 'MOVIMENTACAO_ID'
       Origin = 'MOVIMENTACAO_ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]

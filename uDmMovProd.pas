@@ -13,6 +13,10 @@ type
     tb_movprod: TFDTable;
     sqlAumentaEstoque: TFDCommand;
     sqlDiminuiEstoque: TFDCommand;
+    tb_movprodMV_PR_ID: TIntegerField;
+    tb_movprodMOVIMENTACAO_ID: TIntegerField;
+    tb_movprodPRODUTO_ID: TIntegerField;
+    tb_movprodQUANTIDADE: TIntegerField;
   private
     { Private declarations }
   public
@@ -26,7 +30,7 @@ implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
-uses uDmPrincipal;
+uses uDmPrincipal, uDmMovimentacao;
 
 {$R *.dfm}
 
