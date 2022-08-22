@@ -21,6 +21,5 @@ begin
   TStyleManager.TrySetStyle('Iceberg Classico');
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TDmPrincipal, DmPrincipal);
-  Application.CreateForm(TDmMovProd, DmMovProd);
   Application.Run;
 end.

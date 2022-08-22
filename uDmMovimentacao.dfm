@@ -4,6 +4,7 @@ object DmMovimentacao: TDmMovimentacao
   Width = 311
   object tb_movimentacao: TFDTable
     Active = True
+    AfterScroll = tb_movimentacaoAfterScroll
     IndexFieldNames = 'MOVIMENTACAO_ID'
     Connection = DmPrincipal.FDConnection1
     TableName = 'MOVIMENTACAO'
@@ -13,6 +14,7 @@ object DmMovimentacao: TDmMovimentacao
       DisplayWidth = 29
       FieldName = 'TIPO'
       Origin = 'TIPO'
+      Required = True
       Size = 30
     end
     object tb_movimentacaoDATA_HORA: TSQLTimeStampField
@@ -46,7 +48,7 @@ object DmMovimentacao: TDmMovimentacao
   end
   object ds_movimentacao: TDataSource
     DataSet = tb_movimentacao
-    Left = 96
+    Left = 72
     Top = 144
   end
 end

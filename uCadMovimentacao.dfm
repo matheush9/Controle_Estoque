@@ -2,7 +2,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
   Left = 0
   Top = 0
   Caption = 'Cadastro de Movimenta'#231#227'o'
-  ClientHeight = 471
+  ClientHeight = 488
   ClientWidth = 1084
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,13 +11,14 @@ object frmCadMovimentacao: TfrmCadMovimentacao
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poDesktopCenter
   OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label2: TLabel
-    Left = 17
-    Top = 97
+    Left = 19
+    Top = 112
     Width = 144
     Height = 16
     Caption = 'Tipo da Movimenta'#231#227'o'
@@ -29,8 +30,8 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 17
-    Top = 158
+    Left = 19
+    Top = 178
     Width = 78
     Height = 16
     Caption = 'Data e Hora'
@@ -44,7 +45,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
   end
   object Label4: TLabel
     Left = 19
-    Top = 229
+    Top = 245
     Width = 84
     Height = 16
     Caption = 'Observa'#231#245'es'
@@ -57,8 +58,8 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 19
-    Top = 377
+    Left = 21
+    Top = 391
     Width = 82
     Height = 16
     Caption = 'Respons'#225'vel'
@@ -72,7 +73,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
   end
   object dbEdit_dataHora: TDBEdit
     Left = 19
-    Top = 180
+    Top = 200
     Width = 125
     Height = 25
     AutoSize = False
@@ -83,7 +84,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
   end
   object DBMemo1: TDBMemo
     Left = 19
-    Top = 251
+    Top = 267
     Width = 246
     Height = 112
     DataField = 'OBSERVACAO'
@@ -92,7 +93,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
   end
   object DBEdit3: TDBEdit
     Left = 19
-    Top = 399
+    Top = 413
     Width = 175
     Height = 25
     AutoSize = False
@@ -102,9 +103,9 @@ object frmCadMovimentacao: TfrmCadMovimentacao
   end
   object DBGrid1: TDBGrid
     Left = 299
-    Top = 123
+    Top = 122
     Width = 286
-    Height = 302
+    Height = 316
     DataSource = DmMovimentacao.ds_movimentacao
     TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
@@ -115,7 +116,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
   end
   object DBC_tipo: TDBComboBox
     Left = 19
-    Top = 119
+    Top = 134
     Width = 175
     Height = 21
     Style = csDropDownList
@@ -130,7 +131,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     Left = 608
     Top = 65
     Width = 476
-    Height = 406
+    Height = 423
     Align = alRight
     BevelInner = bvRaised
     TabOrder = 5
@@ -162,10 +163,10 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     end
     object Label8: TLabel
       Left = 24
-      Top = 343
-      Width = 142
+      Top = 359
+      Width = 120
       Height = 16
-      Caption = 'Total de Produtos : ??'
+      Caption = 'Total de Produtos:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -186,6 +187,19 @@ object frmCadMovimentacao: TfrmCadMovimentacao
       Font.Style = [fsBold]
       ParentFont = False
     end
+    object lb_totalP: TLabel
+      Left = 150
+      Top = 359
+      Width = 57
+      Height = 14
+      Caption = 'lb_totalP'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
     object DBNavigator2: TDBNavigator
       Left = 272
       Top = 26
@@ -197,9 +211,9 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     end
     object DBGrid2: TDBGrid
       Left = 24
-      Top = 144
+      Top = 132
       Width = 433
-      Height = 193
+      Height = 210
       DataSource = DmMovProd.ds_movprod
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
@@ -210,23 +224,14 @@ object frmCadMovimentacao: TfrmCadMovimentacao
       Columns = <
         item
           Expanded = False
-          FieldName = 'MV_PR_ID'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'MOVIMENTACAO_ID'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'PRODUTO_ID'
-          Title.Caption = 'PRODUTO'
-          Visible = True
-        end
-        item
-          Expanded = False
           FieldName = 'QUANTIDADE'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'nomeProduto'
+          Title.Caption = 'NOME DO PRODUTO'
+          Width = 64
           Visible = True
         end>
     end
@@ -260,7 +265,6 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     Align = alTop
     BevelInner = bvSpace
     TabOrder = 6
-    ExplicitTop = -6
     object Label1: TLabel
       Left = 17
       Top = 19

@@ -18,6 +18,7 @@ type
     tb_movimentacaoRESPONSAVEL: TStringField;
     tb_movimentacaoMOVIMENTACAO_ID: TIntegerField;
     ds_movimentacao: TDataSource;
+    procedure tb_movimentacaoAfterScroll(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -31,8 +32,13 @@ implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
-uses uDmPrincipal;
+uses uDmPrincipal, uDmMovProd;
 
 {$R *.dfm}
+
+procedure TDmMovimentacao.tb_movimentacaoAfterScroll(DataSet: TDataSet);
+begin
+  DmMovProd.CalcTotalProd;
+end;
 
 end.

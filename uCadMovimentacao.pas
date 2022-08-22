@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.DBCtrls,
-  Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Mask;
+  Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Datasnap.Provider,
+  Datasnap.DBClient;
 
 type
   TfrmCadMovimentacao = class(TForm)
@@ -30,9 +31,11 @@ type
     DBEdit1: TDBEdit;
     Label9: TLabel;
     DBLookupComboBox1: TDBLookupComboBox;
+    lb_totalP: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
+    procedure ClientDataSet1AfterScroll(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -47,6 +50,11 @@ implementation
 {$R *.dfm}
 
 uses uDmMovimentacao, uDmMovProd, uDmProdutos;
+
+procedure TfrmCadMovimentacao.ClientDataSet1AfterScroll(DataSet: TDataSet);
+begin
+  showmessage('sad');
+end;
 
 procedure TfrmCadMovimentacao.DBNavigator1Click(Sender: TObject;
   Button: TNavigateBtn);
@@ -69,11 +77,6 @@ end;
 
 procedure TfrmCadMovimentacao.FormCreate(Sender: TObject);
 begin
-  if DmMovimentacao = nil then
-  begin
-    DmMovimentacao := TDmMovimentacao.Create(DmMovimentacao);
-  end;
-
   if DmProdutos = nil then
   begin
     DmProdutos := TDmProdutos.Create(DmProdutos);
@@ -83,6 +86,12 @@ begin
   begin
     DmMovProd := TDmMovProd.Create(DmMovProd);
   end;
+
+  if DmMovimentacao = nil then
+  begin
+    DmMovimentacao := TDmMovimentacao.Create(DmMovimentacao);
+  end;
+
 end;
 
 end.

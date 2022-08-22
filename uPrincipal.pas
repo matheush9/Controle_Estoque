@@ -40,7 +40,7 @@ procedure TfrmPrincipal.Cadastrarmov1Click(Sender: TObject);
 begin
   if frmCadMovimentacao = nil then
   begin
-    frmCadMovimentacao := TfrmCadMovimentacao.Create(frmCadMovimentacao);
+    frmCadMovimentacao := TfrmCadMovimentacao.Create(nil);
     frmCadMovimentacao.ShowModal;
   end;
 end;
