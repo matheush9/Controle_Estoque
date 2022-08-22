@@ -18,6 +18,7 @@ type
     tb_produtosPRODUTO_ID: TIntegerField;
     ds_produtos: TDataSource;
     procedure DataModuleCreate(Sender: TObject);
+    procedure tb_produtosNewRecord(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -31,13 +32,18 @@ implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
-uses uDmPrincipal;
+uses uDmPrincipal, uDmMovimentacao;
 
 {$R *.dfm}
 
 procedure TDmProdutos.DataModuleCreate(Sender: TObject);
 begin
   tb_produtos.Active := true;
+end;
+
+procedure TDmProdutos.tb_produtosNewRecord(DataSet: TDataSet);
+begin
+  tb_produtosESTOQUE_ATUAL.value := 0;
 end;
 
 end.

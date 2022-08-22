@@ -5,6 +5,7 @@ object DmMovProd: TDmMovProd
   Width = 315
   object tb_movprod: TFDTable
     AfterPost = tb_movprodAfterPost
+    BeforeDelete = tb_movprodBeforeDelete
     AfterDelete = tb_movprodAfterDelete
     IndexName = 'FK_MOVIMENTACAO_PRODUTOS_1'
     MasterSource = DmMovimentacao.ds_movimentacao
@@ -42,23 +43,40 @@ object DmMovProd: TDmMovProd
     end
   end
   object sqlAumentaEstoque: TFDCommand
+    Connection = DmPrincipal.FDConnection1
+    CommandText.Strings = (
+      
+        'UPDATE PRODUTOS SET ESTOQUE_ATUAL = ESTOQUE_ATUAL + :prodQtd WHE' +
+        'RE PRODUTO_ID = :prodID;')
     ParamData = <
       item
-        Name = 'prodId'
+        Name = 'prodQtd'
+        ParamType = ptInput
       end
       item
-        Name = 'prodQtd'
+        Name = 'prodID'
+        ParamType = ptInput
       end>
     Left = 96
     Top = 96
   end
   object sqlDiminuiEstoque: TFDCommand
+    Connection = DmPrincipal.FDConnection1
+    CommandText.Strings = (
+      
+        'UPDATE PRODUTOS SET ESTOQUE_ATUAL = ESTOQUE_ATUAL - :prodQtd WHE' +
+        'RE PRODUTO_ID = :prodID;')
     ParamData = <
       item
-        Name = 'idProd'
+        Name = 'prodQtd'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
       end
       item
-        Name = 'prodQtd'
+        Name = 'prodID'
+        DataType = ftInteger
+        ParamType = ptInput
       end>
     Left = 96
     Top = 160
@@ -66,6 +84,6 @@ object DmMovProd: TDmMovProd
   object ds_movprod: TDataSource
     DataSet = tb_movprod
     Left = 200
-    Top = 32
+    Top = 40
   end
 end

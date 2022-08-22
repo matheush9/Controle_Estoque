@@ -22,6 +22,7 @@ type
     DBNavigator1: TDBNavigator;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,6 +51,11 @@ begin
   begin
     DmProdutos := TDmProdutos.Create(DmProdutos);
   end;
+end;
+
+procedure TfrmCadProduto.FormShow(Sender: TObject);
+begin
+  DmProdutos.tb_produtos.Refresh;
 end;
 
 end.

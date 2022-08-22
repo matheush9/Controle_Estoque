@@ -13,6 +13,7 @@ object frmCadProduto: TfrmCadProduto
   OldCreateOrder = False
   OnClose = FormClose
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -117,12 +118,13 @@ object frmCadProduto: TfrmCadProduto
   end
   object DBEdit4: TDBEdit
     Left = 190
-    Top = 296
-    Width = 134
+    Top = 299
+    Width = 126
     Height = 25
     AutoSize = False
     DataField = 'ESTOQUE_ATUAL'
     DataSource = DmProdutos.ds_produtos
+    ReadOnly = True
     TabOrder = 3
   end
   object DBGrid1: TDBGrid

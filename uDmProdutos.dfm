@@ -5,6 +5,7 @@ object DmProdutos: TDmProdutos
   Width = 300
   object tb_produtos: TFDTable
     Active = True
+    OnNewRecord = tb_produtosNewRecord
     IndexFieldNames = 'PRODUTO_ID'
     Connection = DmPrincipal.FDConnection1
     TableName = 'PRODUTOS'
@@ -28,7 +29,6 @@ object DmProdutos: TDmProdutos
     object tb_produtosESTOQUE_ATUAL: TIntegerField
       FieldName = 'ESTOQUE_ATUAL'
       Origin = 'ESTOQUE_ATUAL'
-      ReadOnly = True
     end
     object tb_produtosPRODUTO_ID: TIntegerField
       FieldName = 'PRODUTO_ID'
