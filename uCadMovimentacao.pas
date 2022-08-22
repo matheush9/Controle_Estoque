@@ -35,7 +35,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
-    procedure ClientDataSet1AfterScroll(DataSet: TDataSet);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,11 +50,6 @@ implementation
 {$R *.dfm}
 
 uses uDmMovimentacao, uDmMovProd, uDmProdutos;
-
-procedure TfrmCadMovimentacao.ClientDataSet1AfterScroll(DataSet: TDataSet);
-begin
-  showmessage('sad');
-end;
 
 procedure TfrmCadMovimentacao.DBNavigator1Click(Sender: TObject;
   Button: TNavigateBtn);
@@ -92,6 +87,11 @@ begin
     DmMovimentacao := TDmMovimentacao.Create(DmMovimentacao);
   end;
 
+end;
+
+procedure TfrmCadMovimentacao.FormShow(Sender: TObject);
+begin
+  DmMovProd.CalcTotalProd;
 end;
 
 end.

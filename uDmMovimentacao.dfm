@@ -1,9 +1,9 @@
 object DmMovimentacao: TDmMovimentacao
   OldCreateOrder = False
+  OnCreate = DataModuleCreate
   Height = 262
   Width = 311
   object tb_movimentacao: TFDTable
-    Active = True
     AfterScroll = tb_movimentacaoAfterScroll
     IndexFieldNames = 'MOVIMENTACAO_ID'
     Connection = DmPrincipal.FDConnection1

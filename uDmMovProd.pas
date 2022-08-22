@@ -21,6 +21,7 @@ type
     tb_movprodnomeProduto: TStringField;
     procedure tb_movprodAfterDelete(DataSet: TDataSet);
     procedure tb_movprodAfterPost(DataSet: TDataSet);
+    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,6 +60,11 @@ begin
     end;
 
   end;
+end;
+
+procedure TDmMovProd.DataModuleCreate(Sender: TObject);
+begin
+  tb_movprod.Active := true;
 end;
 
 procedure TDmMovProd.tb_movprodAfterDelete(DataSet: TDataSet);

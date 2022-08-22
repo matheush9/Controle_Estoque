@@ -1,9 +1,9 @@
 object DmMovProd: TDmMovProd
   OldCreateOrder = False
+  OnCreate = DataModuleCreate
   Height = 247
   Width = 315
   object tb_movprod: TFDTable
-    Active = True
     AfterPost = tb_movprodAfterPost
     AfterDelete = tb_movprodAfterDelete
     IndexName = 'FK_MOVIMENTACAO_PRODUTOS_1'

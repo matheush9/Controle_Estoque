@@ -19,6 +19,7 @@ type
     tb_movimentacaoMOVIMENTACAO_ID: TIntegerField;
     ds_movimentacao: TDataSource;
     procedure tb_movimentacaoAfterScroll(DataSet: TDataSet);
+    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,6 +36,11 @@ implementation
 uses uDmPrincipal, uDmMovProd;
 
 {$R *.dfm}
+
+procedure TDmMovimentacao.DataModuleCreate(Sender: TObject);
+begin
+  tb_movimentacao.Active := true;
+end;
 
 procedure TDmMovimentacao.tb_movimentacaoAfterScroll(DataSet: TDataSet);
 begin

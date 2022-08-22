@@ -17,6 +17,7 @@ type
     tb_produtosESTOQUE_ATUAL: TIntegerField;
     tb_produtosPRODUTO_ID: TIntegerField;
     ds_produtos: TDataSource;
+    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,5 +34,10 @@ implementation
 uses uDmPrincipal;
 
 {$R *.dfm}
+
+procedure TDmProdutos.DataModuleCreate(Sender: TObject);
+begin
+  tb_produtos.Active := true;
+end;
 
 end.

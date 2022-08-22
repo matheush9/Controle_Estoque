@@ -1,5 +1,6 @@
 object DmProdutos: TDmProdutos
   OldCreateOrder = False
+  OnCreate = DataModuleCreate
   Height = 250
   Width = 300
   object tb_produtos: TFDTable
