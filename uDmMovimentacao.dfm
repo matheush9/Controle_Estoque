@@ -41,14 +41,22 @@ object DmMovimentacao: TDmMovimentacao
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
   end
-  object qry_movimentacao: TFDQuery
+  object sql_movimentacao: TFDQuery
+    Active = True
     Connection = DmPrincipal.FDConnection1
+    SQL.Strings = (
+      'SELECT * FROM MOVIMENTACAO;')
     Left = 200
     Top = 64
   end
   object ds_movimentacao: TDataSource
     DataSet = tb_movimentacao
     Left = 72
+    Top = 144
+  end
+  object ds_sql_movimentacao: TDataSource
+    DataSet = sql_movimentacao
+    Left = 200
     Top = 144
   end
 end

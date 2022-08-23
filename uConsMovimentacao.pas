@@ -4,16 +4,24 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, FireDAC.Stan.Intf,
-  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
-  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.ExtCtrls, Vcl.DBCtrls,
-  Vcl.Grids, Vcl.DBGrids;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Data.DB, Vcl.StdCtrls,
+  Vcl.Mask, Vcl.Grids, Vcl.DBGrids;
 
 type
   TfrmConsMovimentacao = class(TForm)
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure FormCreate(Sender: TObject);
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Label1: TLabel;
+    Button1: TButton;
+    DBGrid1: TDBGrid;
+    DBGrid2: TDBGrid;
+    Label2: TLabel;
+    MaskEdit1: TMaskEdit;
+    MaskEdit2: TMaskEdit;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
   private
     { Private declarations }
   public
@@ -26,23 +34,5 @@ var
 implementation
 
 {$R *.dfm}
-
-uses uDmMovimentacao, uDmMovProd;
-
-procedure TfrmConsMovimentacao.FormClose(Sender: TObject;
-  var Action: TCloseAction);
-begin
-  FreeAndNil(DmMovimentacao);
-  frmConsMovimentacao := nil;
-  Action := CaFree;
-end;
-
-procedure TfrmConsMovimentacao.FormCreate(Sender: TObject);
-begin
-  if DmMovimentacao = nil then
-  begin
-    DmMovimentacao := TDmMovimentacao.Create(DmMovimentacao);
-  end;
-end;
 
 end.

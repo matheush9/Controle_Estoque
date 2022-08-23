@@ -2,8 +2,8 @@ object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
   Caption = 'Controle de Estoque'
-  ClientHeight = 500
-  ClientWidth = 651
+  ClientHeight = 502
+  ClientWidth = 633
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,17 +15,9 @@ object frmPrincipal: TfrmPrincipal
   WindowState = wsMaximized
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel1: TPanel
-    Left = 0
-    Top = 0
-    Width = 651
-    Height = 500
-    Align = alClient
-    TabOrder = 0
-  end
   object MainMenu1: TMainMenu
-    Left = 456
-    Top = 408
+    Left = 464
+    Top = 376
     object Sistema1: TMenuItem
       Caption = 'Sistema'
       object Sair1: TMenuItem
@@ -33,22 +25,22 @@ object frmPrincipal: TfrmPrincipal
         OnClick = Sair1Click
       end
     end
-    object Sistema2: TMenuItem
+    object Cadastro1: TMenuItem
       Caption = 'Cadastro'
       object Produtos1: TMenuItem
         Caption = 'Produtos'
         OnClick = Produtos1Click
       end
     end
-    object Movimentao1: TMenuItem
-      Caption = 'Movimenta'#231#227'o'
-      object Cadastrarmov1: TMenuItem
-        Caption = 'Cadastrar movimenta'#231#227'o'
-        OnClick = Cadastrarmov1Click
+    object Movimentaes1: TMenuItem
+      Caption = 'Movimenta'#231#245'es'
+      object CadastrarMovimentaes1: TMenuItem
+        Caption = 'Cadastrar movimenta'#231#245'es'
+        OnClick = CadastrarMovimentaes1Click
       end
-      object Consultarmov1: TMenuItem
-        Caption = 'Consultar movimenta'#231#227'o'
-        OnClick = Consultarmov1Click
+      object Consultarmovimentaes1: TMenuItem
+        Caption = 'Consultar movimenta'#231#245'es'
+        OnClick = Consultarmovimentaes1Click
       end
     end
   end

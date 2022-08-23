@@ -11,13 +11,14 @@ uses
 type
   TDmMovimentacao = class(TDataModule)
     tb_movimentacao: TFDTable;
-    qry_movimentacao: TFDQuery;
+    sql_movimentacao: TFDQuery;
     tb_movimentacaoTIPO: TStringField;
     tb_movimentacaoDATA_HORA: TSQLTimeStampField;
     tb_movimentacaoOBSERVACAO: TMemoField;
     tb_movimentacaoRESPONSAVEL: TStringField;
     tb_movimentacaoMOVIMENTACAO_ID: TIntegerField;
     ds_movimentacao: TDataSource;
+    ds_sql_movimentacao: TDataSource;
     procedure tb_movimentacaoAfterScroll(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
   private

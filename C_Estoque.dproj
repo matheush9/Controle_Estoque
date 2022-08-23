@@ -113,10 +113,6 @@
             <Form>frmCadMovimentacao</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="uConsMovimentacao.pas">
-            <Form>frmConsMovimentacao</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="uDmPrincipal.pas">
             <Form>DmPrincipal</Form>
             <FormType>dfm</FormType>
@@ -136,6 +132,9 @@
             <Form>DmMovProd</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="uConsMovimentacao.pas">
+            <Form>frmConsMovimentacao</Form>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

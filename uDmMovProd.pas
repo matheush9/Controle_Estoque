@@ -45,21 +45,20 @@ procedure TDmMovProd.CalcTotalProd;
 var
   Total: integer;
 begin
-  if tb_movprod.State in [dsBrowse] then
+  if frmCadMovimentacao <> nil then
   begin
-    tb_movprod.first;
-
-    while tb_movprod.Eof = false do
+    if tb_movprod.State in [dsBrowse] then
     begin
-      Total := Total + tb_movprod.FieldByName('QUANTIDADE').Value;
-      tb_movprod.Next;
-    end;
+      tb_movprod.first;
 
-    if frmCadMovimentacao <> nil then
-    begin
+      while tb_movprod.Eof = false do
+      begin
+        Total := Total + tb_movprod.FieldByName('QUANTIDADE').Value;
+        tb_movprod.Next;
+      end;
+
       frmCadMovimentacao.lb_totalP.Caption := IntToStr(Total);
     end;
-
   end;
 end;
 
@@ -79,20 +78,26 @@ begin
   CalcTotalProd;
 
   // Aumenta ou diminui o estoque
-  if (DmMovimentacao.tb_movimentacao.FieldByName('TIPO').Value = 'Saida do Estoque') then
+  if (DmMovimentacao.tb_movimentacao.FieldByName('TIPO')
+    .Value = 'Saida do Estoque') then
   begin
     sqlDiminuiEstoque.Active := true;
-    sqlDiminuiEstoque.ParamByName('prodID').Value := tb_movprod.FieldByName('PRODUTO_ID').Value;
-    sqlDiminuiEstoque.ParamByName('prodQtd').Value := tb_movprod.FieldByName('QUANTIDADE').Value;
+    sqlDiminuiEstoque.ParamByName('prodID').Value :=
+      tb_movprod.FieldByName('PRODUTO_ID').Value;
+    sqlDiminuiEstoque.ParamByName('prodQtd').Value :=
+      tb_movprod.FieldByName('QUANTIDADE').Value;
     sqlDiminuiEstoque.Execute();
     sqlDiminuiEstoque.Active := false;
   end;
 
-  if (DmMovimentacao.tb_movimentacao.FieldByName('TIPO').Value = 'Entrada no Estoque') then
+  if (DmMovimentacao.tb_movimentacao.FieldByName('TIPO')
+    .Value = 'Entrada no Estoque') then
   begin
     sqlAumentaEstoque.Active := true;
-    sqlAumentaEstoque.ParamByName('prodID').Value := tb_movprod.FieldByName('PRODUTO_ID').Value;
-    sqlAumentaEstoque.ParamByName('prodQtd').Value := tb_movprod.FieldByName('QUANTIDADE').Value;
+    sqlAumentaEstoque.ParamByName('prodID').Value :=
+      tb_movprod.FieldByName('PRODUTO_ID').Value;
+    sqlAumentaEstoque.ParamByName('prodQtd').Value :=
+      tb_movprod.FieldByName('QUANTIDADE').Value;
     sqlAumentaEstoque.Execute();
     sqlAumentaEstoque.Active := false;
   end;
@@ -101,20 +106,26 @@ end;
 procedure TDmMovProd.tb_movprodBeforeDelete(DataSet: TDataSet);
 begin
   // Aumenta ou diminui o estoque
-  if (DmMovimentacao.tb_movimentacao.FieldByName('TIPO').Value = 'Entrada no Estoque') then
+  if (DmMovimentacao.tb_movimentacao.FieldByName('TIPO')
+    .Value = 'Entrada no Estoque') then
   begin
     sqlDiminuiEstoque.Active := true;
-    sqlDiminuiEstoque.ParamByName('prodID').Value := tb_movprod.FieldByName('PRODUTO_ID').Value;
-    sqlDiminuiEstoque.ParamByName('prodQtd').Value := tb_movprod.FieldByName('QUANTIDADE').Value;
+    sqlDiminuiEstoque.ParamByName('prodID').Value :=
+      tb_movprod.FieldByName('PRODUTO_ID').Value;
+    sqlDiminuiEstoque.ParamByName('prodQtd').Value :=
+      tb_movprod.FieldByName('QUANTIDADE').Value;
     sqlDiminuiEstoque.Execute();
     sqlDiminuiEstoque.Active := false;
   end;
 
-  if (DmMovimentacao.tb_movimentacao.FieldByName('TIPO').Value = 'Saida do Estoque') then
+  if (DmMovimentacao.tb_movimentacao.FieldByName('TIPO')
+    .Value = 'Saida do Estoque') then
   begin
     sqlAumentaEstoque.Active := true;
-    sqlAumentaEstoque.ParamByName('prodID').Value := tb_movprod.FieldByName('PRODUTO_ID').Value;
-    sqlAumentaEstoque.ParamByName('prodQtd').Value := tb_movprod.FieldByName('QUANTIDADE').Value;
+    sqlAumentaEstoque.ParamByName('prodID').Value :=
+      tb_movprod.FieldByName('PRODUTO_ID').Value;
+    sqlAumentaEstoque.ParamByName('prodQtd').Value :=
+      tb_movprod.FieldByName('QUANTIDADE').Value;
     sqlAumentaEstoque.Execute();
     sqlAumentaEstoque.Active := false;
   end;
@@ -122,4 +133,3 @@ begin
 end;
 
 end.
-

@@ -5,11 +5,11 @@ uses
   uPrincipal in 'uPrincipal.pas' {frmPrincipal},
   uCadProduto in 'uCadProduto.pas' {frmCadProduto},
   uCadMovimentacao in 'uCadMovimentacao.pas' {frmCadMovimentacao},
-  uConsMovimentacao in 'uConsMovimentacao.pas' {frmConsMovimentacao},
   uDmPrincipal in 'uDmPrincipal.pas' {DmPrincipal: TDataModule},
   uDmProdutos in 'uDmProdutos.pas' {DmProdutos: TDataModule},
   uDmMovimentacao in 'uDmMovimentacao.pas' {DmMovimentacao: TDataModule},
   uDmMovProd in 'uDmMovProd.pas' {DmMovProd: TDataModule},
+  uConsMovimentacao in 'uConsMovimentacao.pas' {frmConsMovimentacao},
   Vcl.Themes,
   Vcl.Styles;
 
