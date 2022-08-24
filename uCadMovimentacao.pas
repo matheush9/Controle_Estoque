@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.DBCtrls,
   Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Datasnap.Provider,
-  Datasnap.DBClient;
+  Datasnap.DBClient, uDmMovimentacao, uDmMovProd, uDmProdutos;
 
 type
   TfrmCadMovimentacao = class(TForm)
@@ -31,11 +31,10 @@ type
     DBEdit1: TDBEdit;
     Label9: TLabel;
     DBLookupComboBox1: TDBLookupComboBox;
-    lb_totalP: TLabel;
+    DBText1: TDBText;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
-    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,12 +43,15 @@ type
 
 var
   frmCadMovimentacao: TfrmCadMovimentacao;
+  AAAAA: TfrmCadMovimentacao;
+
+  DmMovimentacao: TDmMovimentacao;
+  DmProdutos: TDmProdutos;
+  DmMovProd: TDmMovProd;
 
 implementation
 
 {$R *.dfm}
-
-uses uDmMovimentacao, uDmMovProd, uDmProdutos;
 
 procedure TfrmCadMovimentacao.DBNavigator1Click(Sender: TObject;
   Button: TNavigateBtn);
@@ -66,32 +68,16 @@ begin
   FreeAndNil(DmProdutos);
   FreeAndNil(DmMovProd);
   FreeAndNil(DmMovimentacao);
-  frmCadMovimentacao := nil;
   Action := CaFree;
 end;
 
 procedure TfrmCadMovimentacao.FormCreate(Sender: TObject);
 begin
-  if DmProdutos = nil then
-  begin
-    DmProdutos := TDmProdutos.Create(DmProdutos);
-  end;
-
-  if DmMovProd = nil then
-  begin
-    DmMovProd := TDmMovProd.Create(DmMovProd);
-  end;
-
-  if DmMovimentacao = nil then
-  begin
-    DmMovimentacao := TDmMovimentacao.Create(DmMovimentacao);
-  end;
-
-end;
-
-procedure TfrmCadMovimentacao.FormShow(Sender: TObject);
-begin
-  DmMovProd.CalcTotalProd;
+  DmProdutos := TDmProdutos.Create(Self);
+  DmMovProd := TDmMovProd.Create(Self);
+  DmMovimentacao := TDmMovimentacao.Create(Self);
+  DmMovProd.tb_movprod.Active := true;
+  DmMovProd.tb_movprod.Open;
 end;
 
 end.

@@ -38,20 +38,19 @@ uses uCadMovimentacao, uCadProduto, uConsMovimentacao;
 procedure TfrmPrincipal.CadastrarMovimentaes1Click(Sender: TObject);
 begin
   frmCadMovimentacao := TfrmCadMovimentacao.Create(Self);
-  frmCadMovimentacao.ShowModal;
+  frmCadMovimentacao.Show;
 end;
 
 procedure TfrmPrincipal.Consultarmovimentaes1Click(Sender: TObject);
 begin
   frmConsMovimentacao := TfrmConsMovimentacao.Create(Self);
-  frmConsMovimentacao.ShowModal;
-  frmConsMovimentacao.Free;
+  frmConsMovimentacao.Show;
 end;
 
 procedure TfrmPrincipal.Produtos1Click(Sender: TObject);
 begin
   frmCadProduto := TfrmCadProduto.Create(Self);
-  frmCadProduto.ShowModal;
+  frmCadProduto.Show;
 end;
 
 procedure TfrmPrincipal.Sair1Click(Sender: TObject);

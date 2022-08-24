@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Mask;
+  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Mask, uDmProdutos;
 
 type
   TfrmCadProduto = class(TForm)
@@ -31,26 +31,21 @@ type
 
 var
   frmCadProduto: TfrmCadProduto;
+  DmProdutos: TDmprodutos;
 
 implementation
 
 {$R *.dfm}
 
-uses uDmProdutos;
-
 procedure TfrmCadProduto.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   FreeAndNil(DmProdutos);
-  frmCadProduto := nil;
   Action := CaFree;
 end;
 
 procedure TfrmCadProduto.FormCreate(Sender: TObject);
 begin
-  if DmProdutos = nil then
-  begin
-    DmProdutos := TDmProdutos.Create(DmProdutos);
-  end;
+  DmProdutos := TDmProdutos.Create(Self);
 end;
 
 procedure TfrmCadProduto.FormShow(Sender: TObject);

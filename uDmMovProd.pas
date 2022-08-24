@@ -18,8 +18,8 @@ type
     tb_movprodQUANTIDADE: TIntegerField;
     tb_movprodPRODUTO_ID: TIntegerField;
     ds_movprod: TDataSource;
+    tb_movprodSomaQuantidade: TAggregateField;
     tb_movprodnomeProduto: TStringField;
-    procedure tb_movprodAfterDelete(DataSet: TDataSet);
     procedure tb_movprodAfterPost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure tb_movprodBeforeDelete(DataSet: TDataSet);
@@ -27,7 +27,6 @@ type
     { Private declarations }
   public
     { Public declarations }
-    procedure CalcTotalProd;
   end;
 
 var
@@ -41,42 +40,14 @@ uses uDmPrincipal, uDmMovimentacao, uDmProdutos, uCadMovimentacao;
 
 {$R *.dfm}
 
-procedure TDmMovProd.CalcTotalProd;
-var
-  Total: integer;
-begin
-  if frmCadMovimentacao <> nil then
-  begin
-    if tb_movprod.State in [dsBrowse] then
-    begin
-      tb_movprod.first;
-
-      while tb_movprod.Eof = false do
-      begin
-        Total := Total + tb_movprod.FieldByName('QUANTIDADE').Value;
-        tb_movprod.Next;
-      end;
-
-      frmCadMovimentacao.lb_totalP.Caption := IntToStr(Total);
-    end;
-  end;
-end;
-
 procedure TDmMovProd.DataModuleCreate(Sender: TObject);
 begin
   tb_movprod.Active := true;
 
 end;
 
-procedure TDmMovProd.tb_movprodAfterDelete(DataSet: TDataSet);
-begin
-  CalcTotalProd;
-end;
-
 procedure TDmMovProd.tb_movprodAfterPost(DataSet: TDataSet);
 begin
-  CalcTotalProd;
-
   // Aumenta ou diminui o estoque
   if (DmMovimentacao.tb_movimentacao.FieldByName('TIPO')
     .Value = 'Saida do Estoque') then

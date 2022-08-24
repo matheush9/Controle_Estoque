@@ -10,7 +10,12 @@ object frmConsMovimentacao: TfrmConsMovimentacao
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsMDIChild
   OldCreateOrder = False
+  Visible = True
+  WindowState = wsMaximized
+  OnClose = FormClose
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -20,7 +25,6 @@ object frmConsMovimentacao: TfrmConsMovimentacao
     Height = 73
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 581
     object Label1: TLabel
       Left = 24
       Top = 20
@@ -42,7 +46,6 @@ object frmConsMovimentacao: TfrmConsMovimentacao
     Height = 72
     Align = alTop
     TabOrder = 1
-    ExplicitTop = 67
     object Label3: TLabel
       Left = 24
       Top = 13
@@ -57,15 +60,16 @@ object frmConsMovimentacao: TfrmConsMovimentacao
       Height = 13
       Caption = 'Data final:'
     end
-    object Button1: TButton
+    object btn_consultar: TButton
       Left = 296
       Top = 16
       Width = 89
       Height = 41
       Caption = 'Consultar'
       TabOrder = 0
+      OnClick = btn_consultarClick
     end
-    object MaskEdit1: TMaskEdit
+    object edit_dataInicial: TMaskEdit
       Left = 24
       Top = 32
       Width = 102
@@ -75,7 +79,7 @@ object frmConsMovimentacao: TfrmConsMovimentacao
       TabOrder = 1
       Text = '  /  /    '
     end
-    object MaskEdit2: TMaskEdit
+    object edit_dataFinal: TMaskEdit
       Left = 152
       Top = 32
       Width = 104
@@ -93,7 +97,6 @@ object frmConsMovimentacao: TfrmConsMovimentacao
     Height = 361
     Align = alClient
     TabOrder = 2
-    ExplicitLeft = 8
     ExplicitTop = 151
     object Label2: TLabel
       Left = 24
@@ -108,12 +111,12 @@ object frmConsMovimentacao: TfrmConsMovimentacao
       Font.Style = [fsBold]
       ParentFont = False
     end
-    object Label5: TLabel
+    object lb_totalMov: TLabel
       Left = 223
-      Top = 312
-      Width = 42
+      Top = 314
+      Width = 16
       Height = 16
-      Caption = 'Label5'
+      Caption = '00'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -123,9 +126,10 @@ object frmConsMovimentacao: TfrmConsMovimentacao
     end
     object DBGrid1: TDBGrid
       Left = 24
-      Top = 24
+      Top = 33
       Width = 271
       Height = 273
+      DataSource = DmMovimentacao.ds_sql_movimentacao
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -134,16 +138,30 @@ object frmConsMovimentacao: TfrmConsMovimentacao
       TitleFont.Style = []
     end
     object DBGrid2: TDBGrid
-      Left = 324
+      Left = 332
       Top = 24
       Width = 285
       Height = 273
+      DataSource = DmMovimentacao.ds_sql_movprod
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -11
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'NOME'
+          Title.Caption = 'PRODUTO'
+          Width = 150
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'QUANTIDADE'
+          Visible = True
+        end>
     end
   end
 end

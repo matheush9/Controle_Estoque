@@ -10,11 +10,13 @@ object frmCadMovimentacao: TfrmCadMovimentacao
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsMDIChild
   OldCreateOrder = False
   Position = poDesktopCenter
+  Visible = True
+  WindowState = wsMaximized
   OnClose = FormClose
   OnCreate = FormCreate
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label2: TLabel
@@ -136,6 +138,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
     Align = alRight
     BevelInner = bvRaised
     TabOrder = 5
+    ExplicitTop = 57
     object Label6: TLabel
       Left = 24
       Top = 30
@@ -188,12 +191,13 @@ object frmCadMovimentacao: TfrmCadMovimentacao
       Font.Style = [fsBold]
       ParentFont = False
     end
-    object lb_totalP: TLabel
+    object DBText1: TDBText
       Left = 150
-      Top = 359
-      Width = 57
-      Height = 14
-      Caption = 'lb_totalP'
+      Top = 360
+      Width = 65
+      Height = 17
+      DataField = 'SomaQuantidade'
+      DataSource = DmMovProd.ds_movprod
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -232,7 +236,7 @@ object frmCadMovimentacao: TfrmCadMovimentacao
           Expanded = False
           FieldName = 'nomeProduto'
           Title.Caption = 'NOME DO PRODUTO'
-          Width = 64
+          Width = 150
           Visible = True
         end>
     end

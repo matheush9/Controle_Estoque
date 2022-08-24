@@ -4,10 +4,11 @@ object DmMovProd: TDmMovProd
   Height = 247
   Width = 315
   object tb_movprod: TFDTable
+    Active = True
     AfterPost = tb_movprodAfterPost
     BeforeDelete = tb_movprodBeforeDelete
-    AfterDelete = tb_movprodAfterDelete
     IndexName = 'FK_MOVIMENTACAO_PRODUTOS_1'
+    AggregatesActive = True
     MasterSource = DmMovimentacao.ds_movimentacao
     MasterFields = 'MOVIMENTACAO_ID'
     Connection = DmPrincipal.FDConnection1
@@ -38,8 +39,14 @@ object DmMovProd: TDmMovProd
       LookupKeyFields = 'PRODUTO_ID'
       LookupResultField = 'NOME'
       KeyFields = 'PRODUTO_ID'
-      Size = 100
+      Size = 50
       Lookup = True
+    end
+    object tb_movprodSomaQuantidade: TAggregateField
+      FieldName = 'SomaQuantidade'
+      Active = True
+      DisplayName = ''
+      Expression = 'SUM(QUANTIDADE)'
     end
   end
   object sqlAumentaEstoque: TFDCommand
